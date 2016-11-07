@@ -34,3 +34,19 @@ build:
         code: |
           echo "node version $(node -v) running"
           echo "npm version $(npm -v) running"
+deploy:
+  steps:
+    - script:
+        name: install angular-cli
+        code: |
+          npm install -g angular-cli
+    - script:
+        name: ng build
+        code: |
+          ng build
+    - install-packages:
+        packages: lftp
+    - script:
+        name: azure ftp deploy
+        code: |
+          lftp -u ${FTP_USERNAME},${FTP_PASSWORD} -e "mirror -Rev dist/. /site/wwwroot/." ${FTP_SERVER_URL}
