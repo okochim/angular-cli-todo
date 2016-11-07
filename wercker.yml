@@ -27,7 +27,7 @@ build:
     # A step that executes `npm test` command
     - script:
         name: unit tests
-        code: karma start karma.conf.js --single-run
+        code: ng test --single-run
 
     # A custom script step, name value is used in the UI
     # and the code value contains the command that get executed
