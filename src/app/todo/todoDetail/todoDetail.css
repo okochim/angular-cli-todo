@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  border:#00CC00 solid 2px;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 0;
+  width: 50%;
+  min-height: 50px;
+  overflow : hidden;
+}
+.detail {
+  font-size: 2rem;
+  margin: 5px 5px 5px 5px;
+}

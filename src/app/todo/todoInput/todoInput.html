@@ -1,0 +1,32 @@
+<form (ngSubmit)="onSubmit()" #todoForm="ngForm" novalidate>
+  <section class="form-group">
+    <h2>todo id：</h2>
+    <input ngClass="form-control" placeholder="input id" autofocus required [(ngModel)]="todo.id" name="id" #id="ngModel" pattern="^[0-9]+$">
+    <div *ngIf="id.dirty && id.errors">
+      <span ngClass="text-danger" [hidden]="!id.errors.required">id is missing</span>
+      <span ngClass="text-danger" [hidden]="!id.errors.pattern">Character types: single-byte numbers</span>
+    </div>
+    <h2>category：</h2>
+    <div *ngFor="let category of categorys;">
+      <label>
+        <input type="radio" name="category" value="category.id" [checked]="selectedId == category.id">{{category.name}}
+      </label>
+    </div>
+    <div *ngIf="title.dirty && title.errors">
+      <span ngClass="text-danger" [hidden]="!title.errors.required">title is missing</span>
+    </div>
+    <h2>title：</h2>
+    <input ngClass="form-control" placeholder="input title" required [(ngModel)]="todo.title" name="title" #title="ngModel">
+    <div *ngIf="title.dirty && title.errors">
+      <span ngClass="text-danger" [hidden]="!title.errors.required">title is missing</span>
+    </div>
+    <h2>desc：</h2>
+    <textarea ngClass="form-control" placeholder="input desc" required [(ngModel)]="todo.desc" name="desc" #desc="ngModel"></textarea>
+    <div *ngIf="desc.dirty && desc.errors">
+      <div ngClass="text-danger" [hidden]="!desc.errors.required">desc is missing</div>
+    </div>
+  </section>
+  <section ngClass="mg-t-5">
+    <button type="submit" [disabled]="!todoForm.form.valid">追加</button>
+  </section>
+</form>

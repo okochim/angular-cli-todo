@@ -1,0 +1,27 @@
+:host {
+  display: block;
+  border:#4689FF solid 2px;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 0;
+  width: 500px;
+  min-height: 50px;
+  overflow : hidden;
+}
+.todo-id {
+  text-align: center;
+  border-right:1px solid #4689FF;
+  font-size: 2rem;
+  margin: 5px 5px 5px 5px;
+  width: 100px;
+  height: 30px;
+}
+.todo-title {
+  font-size: 2rem;
+  border-right:1px solid #4689FF;
+  margin: 5px 5px 5px 5px;
+  width: 180px;
+  height: 30px;
+}
+div {
+  float: left;
+}

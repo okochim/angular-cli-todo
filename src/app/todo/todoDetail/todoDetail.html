@@ -1,0 +1,7 @@
+<h2>todoDetail</h2>
+<div *ngIf="todo">
+  <div ngClass="detail"><label>ID&nbsp;：&nbsp;</label>{{todo.id}}</div>
+  <div ngClass="detail"><label>TITLE&nbsp;：&nbsp;</label>{{todo.title}}</div>
+  <div ngClass="detail"><label>DESC&nbsp;：&nbsp;</label>{{todo.desc}}</div>
+  <button (click)="goBack()">戻る</button>
+</div>

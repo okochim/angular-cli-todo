@@ -1,3 +1,7 @@
-<h1>
-  {{title}}
-</h1>
+<h1 [myHighlight]="lightgreen">Sample {{name}} {{1+1}} {{2 | exponentialStrength: 10}}</h1>
+<nav>
+  <a routerLink="/login" routerLinkActive="active">login</a>
+  <a routerLink="/todos" routerLinkActive="active">todos</a>
+  <a routerLink="/security" routerLinkActive="active">Security</a>
+</nav>
+<router-outlet></router-outlet>
